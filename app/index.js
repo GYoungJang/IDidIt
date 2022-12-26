@@ -5,9 +5,10 @@ const dotenv = require('dotenv');
 const logger = require('morgan');
 const path = require('path');
 const { swaggerUi, specs } = require('./swagger/swagger');
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+
 dotenv.config();
 
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 app.set('views', './src/views/ejs');
 app.set('view engine', 'ejs');
 // app.set("views", path.join(__dirname, "views"));
